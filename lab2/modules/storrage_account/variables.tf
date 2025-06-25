@@ -1,7 +1,7 @@
 variable "storage_account_name" {
   description = "The name of the storage account"
   type        = string
-  default     = "jonaslab2sa"
+  default     = "sajonaslab2"
 }
 
 variable "location" {
@@ -13,7 +13,7 @@ variable "location" {
 variable "resource_group_name" {
   description = "The name of the resource group"
   type        = string
-  default     = "jotron-training-rg"
+  default     = "rg-jonaslab2-training"
 }
 
 variable "account_tier" {

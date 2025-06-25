@@ -1,5 +1,5 @@
 resource "azurerm_resource_group" "rg" {
-  name     = "jotron-training-rg"
+  name     = "rg-jonaslab2-training"
   location = "norwayeast"
 }
 
