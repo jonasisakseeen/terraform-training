@@ -1,15 +1,18 @@
-data "azurerm_client_config" "current" {}
+data "azurerm_client_config" "current" {
+
+}
 
 resource "azurerm_resource_group" "rg"  {
- name     = "rg-state"
+ name     = "rg-tf-training-lab4-${var.environment}"
  location = var.location
 }
 
-module "key-vault" {
-  source                        = "./modules/key_vault"
-  key_vault_name                = "kv-tf-state"
+resource "key-vault" "kv" {
+  key_vault_name                = "${var.project}-kv"
   location                      = var.location
   resource_group_name           = azurerm_resource_group.rg.name
+  sku_name                      = "standard"
+  enable_rbac_authorization     = true
   tenant_id                     = data.azurerm_client_config.current.tenant_id
 }
 
